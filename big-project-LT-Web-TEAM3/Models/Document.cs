@@ -6,7 +6,7 @@ namespace big_project_LT_Web_TEAM3.Models
     public class Document
     {
         [Required]
-        public int IdDocument { get; set; }
+        public int Id { get; set; }
         [Required, DisplayName("Người Viết")]
         public string WhiteName { get; set; }
         [Required, DisplayName("Hạn lưu trữ")]

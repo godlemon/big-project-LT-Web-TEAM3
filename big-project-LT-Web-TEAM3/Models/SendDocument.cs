@@ -1,8 +1,13 @@
-﻿namespace big_project_LT_Web_TEAM3.Models
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace big_project_LT_Web_TEAM3.Models
 {
     public class SendDocument
     {
-        public string IdTeacher { get; set; }
-        public string IdDocument { get; set; }
+        [Required]
+        public int Id { get; set; }
+        public Teacher teacher { get; set; }
+        public Document Document { get; set; }
     }
 }

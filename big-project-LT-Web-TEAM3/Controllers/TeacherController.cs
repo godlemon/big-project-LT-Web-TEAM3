@@ -13,12 +13,12 @@ namespace big_project_LT_Web_TEAM3.Controllers
         }
         public IActionResult Detail(int id)
         {
-            var model = context.Teacher.FirstOrDefault(tc => tc.IdTeacher == id);
+            var model = context.Teacher.FirstOrDefault(tc => tc.Id == id);
             return View(model);
         }
         public IActionResult Update(Teacher tc)
         {
-            var model = context.Teacher.FirstOrDefault(tc2 => tc2.IdTeacher == tc.IdTeacher);
+            var model = context.Teacher.FirstOrDefault(tc2 => tc2.Id == tc.Id);
             if(model == null)
                 return NotFound();
             {
@@ -27,13 +27,13 @@ namespace big_project_LT_Web_TEAM3.Controllers
         }
         public ActionResult Edit(Teacher tc)
         {
-            var model = context.Teacher.FirstOrDefault(tc2=>tc2.IdTeacher == tc.IdTeacher);
+            var model = context.Teacher.FirstOrDefault(tc2=>tc2.Id == tc.Id);
             model = tc;
             return View(model);
         }
         public ActionResult Delete(Teacher tc)
         {
-            var model = context.Teacher.FirstOrDefault(tc => tc.IdTeacher == tc.IdTeacher);
+            var model = context.Teacher.FirstOrDefault(tc => tc.Id == tc.Id);
             
             if (model == null)
                 return NotFound();

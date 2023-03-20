@@ -6,7 +6,7 @@ namespace big_project_LT_Web_TEAM3.Models
     public class Teacher
     {
         [Required]
-        public int IdTeacher { get; set; }
+        public int Id { get; set; }
         [Required, DisplayName("Tên giáo viên")]
         public string TenGV { get; set; }
         [Required, DisplayName("Chức vụ giáo viên")]
