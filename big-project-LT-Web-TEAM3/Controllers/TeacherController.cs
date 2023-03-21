@@ -10,7 +10,7 @@ namespace big_project_LT_Web_TEAM3.Controllers
         {
             this.context = context;
         }
-        public IActionResult Index()
+        public  IActionResult Index()
         {
             var model = context.Teacher;
             return View(model);
@@ -28,12 +28,14 @@ namespace big_project_LT_Web_TEAM3.Controllers
             {
                 return View("Detail",model);
             }
+            context.SaveChanges();
         }
         public ActionResult Edit(Teacher tc)
         {
             var model = context.Teacher.FirstOrDefault(tc2=>tc2.Id == tc.Id);
             model = tc;
             return View(model);
+            context.SaveChanges();
         }
         public ActionResult Delete(Teacher tc)
         {
@@ -46,6 +48,7 @@ namespace big_project_LT_Web_TEAM3.Controllers
                 var newmodel = context.Teacher;
                 return View("Index", newmodel);
             }
+            context.SaveChanges();
         }
         public IActionResult Create(Teacher tc)
         {
@@ -55,6 +58,7 @@ namespace big_project_LT_Web_TEAM3.Controllers
         {
             context.Teacher.Add(tc);
             return View("Detail",tc);
+            context.SaveChanges();
         }
 
     }
