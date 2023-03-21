@@ -5,7 +5,11 @@ namespace big_project_LT_Web_TEAM3.Controllers
 {
     public class TeacherController : Controller
     {
-        Context context = new Context();
+        private readonly Context context;
+        public TeacherController(Context context)
+        {
+            this.context = context;
+        }
         public IActionResult Index()
         {
             var model = context.Teacher;
