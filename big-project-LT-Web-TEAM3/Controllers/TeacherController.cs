@@ -22,20 +22,17 @@ namespace big_project_LT_Web_TEAM3.Controllers
         }
         public IActionResult Update(Teacher tc)
         {
-            var model = context.Teacher.FirstOrDefault(tc2 => tc2.Id == tc.Id);
-            if(model == null)
+            var model = context.Teacher.FirstOrDefault(tc2 => tc.Id == tc2.Id);
+            if (model == null)
                 return NotFound();
-            {
-                return View("Detail",model);
-            }
+            context.Entry(model).CurrentValues.SetValues(tc);
             context.SaveChanges();
+            return View("Detail", model);
         }
-        public ActionResult Edit(Teacher tc)
+        public IActionResult Edit(Teacher tc)
         {
-            var model = context.Teacher.FirstOrDefault(tc2=>tc2.Id == tc.Id);
-            model = tc;
+            var model = context.Teacher.FirstOrDefault(tc2=>tc.Id == tc2.Id);
             return View(model);
-            context.SaveChanges();
         }
         public ActionResult Delete(Teacher tc)
         {
@@ -46,9 +43,10 @@ namespace big_project_LT_Web_TEAM3.Controllers
             {   
                 context.Teacher.Remove(model);
                 var newmodel = context.Teacher;
+                context.SaveChanges();
                 return View("Index", newmodel);
             }
-            context.SaveChanges();
+            
         }
         public IActionResult Create(Teacher tc)
         {
@@ -56,9 +54,10 @@ namespace big_project_LT_Web_TEAM3.Controllers
         }
         public IActionResult CreateNew(Teacher tc)
         {
-            context.Teacher.Add(tc);
-            return View("Detail",tc);
+            context.Add(tc);
             context.SaveChanges();
+            return View("Detail",tc);
+            
         }
 
     }
