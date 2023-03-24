@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Datum | CRM Admin Dashboard Template</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+      <link rel="stylesheet" href="/assets/css/backend-plugin.min.css">
+      <link rel="stylesheet" href="/assets/css/backend.css?v=1.0.0">  
+  </head>
+    <body class=" color-light ">
+
+    <!-- loader Start -->
+
+    <div id="loading">
+          <div id="loading-center">
+          </div>
+    </div>
+    <!-- loader END -->
+
+    <!-- Wrapper Start -->
+
+    <div class="wrapper">
+
+        <!-- SideBar Strat -->
+
+        <partial name="_SideBar.cshtml" />
+        
+        <!-- SideBar End -->
+
+        <!-- Content Strat -->
+      <div class="content-page">
+        @RenderBody()
+        @await RenderSectionAsync("Scripts", required: false)
+      </div>
+        <!-- Content End -->
+
+    </div>
+    <!-- Wrapper End-->
+
+    <!-- Footer Strat -->
+    <partial name="_Footer"></partial>
+    <!-- Footer End -->
+
+    <!-- Footer End -->
+    <partial name="_LayoutScript"></partial>
+    <!-- Footer End -->
+
+    </body>
+</html>

@@ -22,6 +22,27 @@ namespace big_project_LT_Web_TEAM3.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Classify", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Classify");
+                });
+
             modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Document", b =>
                 {
                     b.Property<int>("Id")
@@ -32,6 +53,10 @@ namespace big_project_LT_Web_TEAM3.Migrations
 
                     b.Property<int>("ClassifyId")
                         .HasColumnType("int");
+
+                    b.Property<string>("DocumentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -91,30 +116,9 @@ namespace big_project_LT_Web_TEAM3.Migrations
                     b.ToTable("Teacher");
                 });
 
-            modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.classify", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("classify");
-                });
-
             modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Document", b =>
                 {
-                    b.HasOne("big_project_LT_Web_TEAM3.Models.classify", "Classify")
+                    b.HasOne("big_project_LT_Web_TEAM3.Models.Classify", "Classify")
                         .WithMany("Tags")
                         .HasForeignKey("ClassifyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -142,7 +146,7 @@ namespace big_project_LT_Web_TEAM3.Migrations
                     b.Navigation("teacher");
                 });
 
-            modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.classify", b =>
+            modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Classify", b =>
                 {
                     b.Navigation("Tags");
                 });

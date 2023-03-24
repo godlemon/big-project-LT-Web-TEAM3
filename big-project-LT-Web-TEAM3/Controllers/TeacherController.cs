@@ -46,7 +46,6 @@ namespace big_project_LT_Web_TEAM3.Controllers
                 context.SaveChanges();
                 return View("Index", newmodel);
             }
-            
         }
         public IActionResult Create(Teacher tc)
         {

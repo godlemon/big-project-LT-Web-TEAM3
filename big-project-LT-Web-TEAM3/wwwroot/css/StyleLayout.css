@@ -1,0 +1,34 @@
+﻿.main {
+    margin-left: 200px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Định dạng cho tiêu đề của trang web */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #f1f1f1;
+    border-right: 1px solid #ccc;
+}
+
+    /* Định dạng cho các mục trong navigation */
+    .navigation a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+        border-bottom: 1px solid #ccc;
+    }
+
+        /* Định dạng cho mục đang được chọn trong navigation */
+        .navigation a.active {
+            background-color: #ddd;
+        }

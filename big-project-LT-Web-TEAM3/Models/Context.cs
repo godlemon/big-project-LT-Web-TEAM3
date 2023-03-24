@@ -9,6 +9,6 @@ namespace big_project_LT_Web_TEAM3.Models
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Document> Document { get; set; }
         public DbSet<SendDocument> SendDocument { get; set; }  
-        public DbSet<classify> classify { get; set; }
+        public DbSet<Classify> Classify { get; set; }
     }
 }
