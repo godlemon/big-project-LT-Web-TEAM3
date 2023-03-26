@@ -1,36 +1,19 @@
 ﻿@model big_project_LT_Web_TEAM3.Models.Document
 
-<h4>Document</h4>
+<h4>Sửa văn bản</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Update">
+        <form asp-action="Update" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="DocumentName" class="control-label"></label>
-                <input asp-for="DocumentName" class="form-control" />
-                <span asp-validation-for="DocumentName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WhiterName" class="control-label"></label>
-                <input asp-for="WhiterName" class="form-control" />
-                <span asp-validation-for="WhiterName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
-                <span asp-validation-for="EndDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            <partial name="_EditCreate"></partial>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-cm btn-outline-dark">Danh sách văn bản</a>
 </div>
 
 @section Scripts {

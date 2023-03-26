@@ -1,0 +1,42 @@
+﻿@model big_project_LT_Web_TEAM3.Models.Document
+
+<div class="form-group">
+    <label asp-for="DocumentName" class="control-label"></label>
+    <input asp-for="DocumentName" class="form-control" />
+    <span asp-validation-for="DocumentName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="WhiterName" class="control-label"></label>
+    <input asp-for="WhiterName" class="form-control" />
+    <span asp-validation-for="WhiterName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="EndDate" class="control-label"></label>
+    <input asp-for="EndDate" class="form-control" />
+    <span asp-validation-for="EndDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Filename" class="control-label"></label>
+    <div class="custom-file">
+        <input name="file" type="file" class="custom-file-input" id="customFile" />
+        <label class="custom-file-label" for="customFile">Choose file</label>
+    </div>
+    <span asp-validation-for="Filename" class="text-danger"></span>
+</div>
+@{
+    Classify[] classify = (Classify[])ViewData["Classify"];
+}
+<div class="form-group">
+    <label asp-for="Classifys" class="control-label"></label>
+    <div>
+        <select name="classify" class="select2-container">
+            @foreach (Classify m in classify)
+            {
+                <option value="@m.Id">@m.Name</option>
+            }
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <input type="submit" value="Lưu" class="btn btn-cm btn-primary" />
+</div>

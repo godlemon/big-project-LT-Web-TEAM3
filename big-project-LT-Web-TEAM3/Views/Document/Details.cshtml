@@ -1,7 +1,7 @@
 ﻿@model big_project_LT_Web_TEAM3.Models.Document
 
 <div>
-    <h4>Document</h4>
+    <h4>Chi tiết Văn bản</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -16,6 +16,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.WhiterName)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Filename)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Filename)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.EndDate)
         </dt>
@@ -23,14 +29,15 @@
             @Html.DisplayFor(model => model.EndDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Classify)
+            @Html.DisplayNameFor(model => model.Classifys.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Classify)
+            @Html.DisplayFor(model => model.Classifys.Name)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Read" asp-route-id="@Model.Id" class="btn btn-cm btn-outline-purple">Tải về</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-cm btn-outline-skyblue">Sửa</a> |
+    <a asp-action="Index" class="btn btn-cm btn-outline-dark">Danh sách văn bản</a>
 </div>

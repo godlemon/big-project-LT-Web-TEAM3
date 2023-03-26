@@ -51,7 +51,7 @@ namespace big_project_LT_Web_TEAM3.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ClassifyId")
+                    b.Property<int>("ClassifysId")
                         .HasColumnType("int");
 
                     b.Property<string>("DocumentName")
@@ -61,13 +61,20 @@ namespace big_project_LT_Web_TEAM3.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Filename")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("WhiterName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ClassifyId");
+                    b.HasIndex("ClassifysId");
 
                     b.ToTable("Document");
                 });
@@ -83,14 +90,33 @@ namespace big_project_LT_Web_TEAM3.Migrations
                     b.Property<int>("DocumentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("teacherId")
+                    b.Property<string>("DocumentOwer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileDocument")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SendTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SendedDocument")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeacherId")
                         .HasColumnType("int");
+
+                    b.Property<string>("receiver")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DocumentId");
 
-                    b.HasIndex("teacherId");
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("SendDocument");
                 });
@@ -118,37 +144,47 @@ namespace big_project_LT_Web_TEAM3.Migrations
 
             modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Document", b =>
                 {
-                    b.HasOne("big_project_LT_Web_TEAM3.Models.Classify", "Classify")
+                    b.HasOne("big_project_LT_Web_TEAM3.Models.Classify", "Classifys")
                         .WithMany("Tags")
-                        .HasForeignKey("ClassifyId")
+                        .HasForeignKey("ClassifysId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Classify");
+                    b.Navigation("Classifys");
                 });
 
             modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.SendDocument", b =>
                 {
                     b.HasOne("big_project_LT_Web_TEAM3.Models.Document", "Document")
-                        .WithMany()
+                        .WithMany("SendDocuments")
                         .HasForeignKey("DocumentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("big_project_LT_Web_TEAM3.Models.Teacher", "teacher")
-                        .WithMany()
-                        .HasForeignKey("teacherId")
+                    b.HasOne("big_project_LT_Web_TEAM3.Models.Teacher", "Teacher")
+                        .WithMany("SendDocuments")
+                        .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Document");
 
-                    b.Navigation("teacher");
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Classify", b =>
                 {
                     b.Navigation("Tags");
+                });
+
+            modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Document", b =>
+                {
+                    b.Navigation("SendDocuments");
+                });
+
+            modelBuilder.Entity("big_project_LT_Web_TEAM3.Models.Teacher", b =>
+                {
+                    b.Navigation("SendDocuments");
                 });
 #pragma warning restore 612, 618
         }

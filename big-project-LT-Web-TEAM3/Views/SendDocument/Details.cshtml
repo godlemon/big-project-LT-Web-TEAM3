@@ -1,0 +1,42 @@
+﻿@model big_project_LT_Web_TEAM3.Models.SendDocument
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Văn bản đã gửi</h1>
+
+<div>
+    <h4>Chi tiết gửi</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.receiver)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.receiver)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SendedDocument)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SendedDocument)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DocumentOwer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DocumentOwer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SendTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SendTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-outline-dark">Văn bản đã gửi</a>
+</div>

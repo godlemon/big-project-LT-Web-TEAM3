@@ -1,11 +1,33 @@
 ﻿@model IEnumerable<big_project_LT_Web_TEAM3.Models.SendDocument>
 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Danh sách văn bản đã gửi</h1>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-skyblue">Gửi văn bản</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.receiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SendedDocument)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentOwer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDocument)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SendTime)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -13,9 +35,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-controller="Teacher" asp-action="Details" asp-route-id="@item.TeacherId">@Html.DisplayFor(modelItem => item.receiver)</a>
+            </td>
+            <td>
+                <a asp-controller="Document" asp-action="Details" asp-route-id="@item.DocumentId">@Html.DisplayFor(modelItem => item.SendedDocument)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentOwer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileDocument)
+            </td>   
+            <td>
+                @Html.DisplayFor(modelItem => item.SendTime)
+            </td>
+            <td>
+                <a asp-action="Read" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Tải về</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Xóa</a>
             </td>
         </tr>
 }

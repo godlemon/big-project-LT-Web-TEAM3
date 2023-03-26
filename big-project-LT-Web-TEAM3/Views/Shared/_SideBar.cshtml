@@ -1,10 +1,9 @@
 ﻿
 <div class="iq-sidebar  sidebar-default  ">
     <div class="iq-sidebar-logo d-flex align-items-end justify-content-between">
-        <a href="/backend/index.html" class="header-logo">
-            <img src="/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
+        <a asp-controller="Home" asp-action="Index" class="header-logo">
             <img src="/assets/images/logo-dark.png" class="img-fluid rounded-normal d-none sidebar-light-img" alt="logo">
-            <span>Datum</span>
+            <span>Khoa Công Nghệ Thông Tin</span>
         </a>
         <div class="side-menu-bt-sidebar-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="text-light wrapper-menu" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -16,96 +15,60 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="side-menu">
                 <li class="px-3 pt-3 pb-2">
-                    <span class="text-uppercase small font-weight-bold">Pages</span>
-                </li>
-                <li class="sidebar-layout">
-                    <a href="#app6" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
-                        <i>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                        </i>
-                        <span class="ml-2">Error</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <ul id="app6" class="submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class=" sidebar-layout">
-                            <a href="/backend/pages-error.html" class="svg-icon">
-                                <i class="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </i>
-                                <span class="ml-2">Error 404</span>
-                            </a>
-                        </li>
-                        <li class=" sidebar-layout">
-                            <a href="/backend/pages-error-500.html" class="svg-icon">
-                                <i class="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
-                                    </svg>
-                                </i>
-                                <span class="ml-2">Error 500</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <span class="text-uppercase small font-weight-bold"></span>
                 </li>
                 <li class=" sidebar-layout">
                     <a asp-controller="Teacher" action="Index" class="svg-icon">
                         <i class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                             </svg>
-                        </i><span class="ml-2">Teacher</span>
+                        </i><span class="ml-2">Giảng viên</span>
                     </a>
                 </li>
-                <li class=" sidebar-layout">
-                    <a href="/backend/pages-maintenance.html" class="svg-icon">
-                        <i class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                <li class="sidebar-layout">
+                    <a href="#app3" class="svg-icon" data-toggle="collapse" aria-expanded="true">
+                        <i>
+                            <svg class="svg-icon" id="iq-form-1" width="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" style="stroke-dasharray: 74, 94; stroke-dashoffset: 0;"></path>
                             </svg>
-                        </i><span class="ml-2">Maintenance</span>
+                        </i>
+                        <span class="ml-2">Văn bản</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
                     </a>
-                </li>
-                <li class="active sidebar-layout">
-                    <a href="/backend/pages-blank-page.html" class="svg-icon">
-                        <i class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                        </i><span class="ml-2">Blank Page</span>
-                    </a>
-                </li>
-                <li class=" sidebar-layout">
-                    <a href="/backend/pages-faq.html" class="svg-icon">
-                        <i class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
-                            </svg>
-                        </i><span class="ml-2">Faq</span>
-                    </a>
-                </li>
-                <li class=" sidebar-layout">
-                    <a href="/backend/pricing.html" class="svg-icon">
-                        <i class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </i><span class="ml-2">Pricing</span>
-                    </a>
-                </li>
-                <li class=" sidebar-layout">
-                    <a href="/backend/timeline.html" class="svg-icon">
-                        <i class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </i><span class="ml-2">Timeline</span>
-                    </a>
+                    <ul id="app3" class="submenu collapse show" data-parent="#iq-sidebar-toggle" style="">
+                        
+                        <li class=" sidebar-layout">
+                            <a asp-controller="SendDocument" asp-action="Create" class="svg-icon">
+                                <i class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                </i><span class="ml-2">Gửi văn bản</span>
+                            </a>
+                        </li>
+                        <li class=" sidebar-layout">
+                            <a asp-controller="Document" asp-action="Index" class="svg-icon">
+                                <i class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                                    </svg>
+                                </i><span class="ml-2">Danh sách văn bản</span>
+                            </a>
+                        </li>
+                        <li class=" sidebar-layout">
+                            <a asp-controller="SendDocument" asp-action="Index" class="svg-icon">
+                                <i class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                                    </svg>
+                                </i><span class="ml-2">văn bản đã gửi</span>
+                            </a>
+                        </li>
+                       
+                    </ul>
                 </li>
             </ul>
         </nav>

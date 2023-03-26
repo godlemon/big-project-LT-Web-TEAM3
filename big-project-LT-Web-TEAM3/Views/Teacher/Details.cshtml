@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Detail</h1>
+<h1>Chi tiết Giáo viên</h1>
 
 <div>
     <h4>Teacher</h4>
@@ -31,6 +31,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-dark">Edit</a> |
+    <a asp-action="Index" class="btn btn-outline-dark">Danh sách giáo viên</a>
 </div>
