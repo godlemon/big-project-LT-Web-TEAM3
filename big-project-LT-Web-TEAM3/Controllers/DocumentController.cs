@@ -18,6 +18,7 @@ namespace big_project_LT_Web_TEAM3.Controllers
         public IActionResult Index(int page = 1, string orderBy = "DocumentName", bool dsc = false)
         {
             var model = context.Paging(page, orderBy, dsc);
+            
             ViewData["Pages"] = model.pages;
             ViewData["Page"] = model.page;
             ViewData["DocumentName"] = false;
@@ -28,7 +29,7 @@ namespace big_project_LT_Web_TEAM3.Controllers
             ViewData[orderBy] = !dsc;
             return View(model.documents);
         }
-            public IActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             var model = context.Document.Include(d => d.Classifys).FirstOrDefault(tc => tc.Id == id);
             return View(model);
@@ -70,13 +71,12 @@ namespace big_project_LT_Web_TEAM3.Controllers
             }
         }
 
-        public IActionResult Create(Document tc)
+        public IActionResult Create()
         {
             ViewData["Classify"] = context.Classify.ToArray();
 
             return View();
         }
-        
         public async Task<IActionResult> CreateNew(Document tc, int classify, IFormFile file)
         {
             
@@ -102,6 +102,8 @@ namespace big_project_LT_Web_TEAM3.Controllers
         }
         public IActionResult Search(string term)
         {
+            var newmodel = context.Document;
+            if (term == null) return View("index", newmodel);
             return View("Index", context.Get(term));
         }
     }

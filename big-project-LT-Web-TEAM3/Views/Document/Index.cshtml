@@ -29,7 +29,7 @@
                 <a asp-action="Index" asp-route-orderBy="Filename" asp-route-dsc="@ViewData["Filename"]" asp-route-page="@ViewData["Page"]">@Html.DisplayNameFor(model => model.Filename)</a>
             </th>
             <th>
-                <a asp-action="Index" asp-route-orderBy="Classifys" asp-route-dsc="@ViewData["Classifys"]" asp-route-page="@ViewData["Page"]">@Html.DisplayNameFor(model => model.Classifys.Name)</a>
+                @Html.DisplayNameFor(model => model.Classifys.Name)
             </th>
             <th></th>
         </tr>
